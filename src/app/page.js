@@ -21,14 +21,12 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <div className={styles.videosCont}>
-        <div className={styles.videoCont}>
-          <video className={styles.video} ref={localPeerRef} autoPlay playsInline></video>
-        </div>
-        <div className={styles.videoCont}>
-          <video className={styles.video} ref={remotePeerRef} autoPlay playsInline></video>
-        </div>
+
+        <video className={styles.video1} ref={localPeerRef} autoPlay playsInline></video>
+        <video className={styles.video2} ref={remotePeerRef} autoPlay playsInline></video>
+        <button className={styles.btn}>Start New Chat</button>
       </div>
     </main>
   );
