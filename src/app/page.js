@@ -19,29 +19,16 @@ export default function Home() {
       });
   }, []);
 
-  const requestCameraPermission = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true ,audio: false });
-      if (localPeerRef.current) {
-        localPeerRef.current.srcObject = stream;
-      }
-    } catch (error) {
-      console.error('Error accessing the camera:', error);
-    }
-  };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className={styles.videosCont}>
         <div className={styles.videoCont}>
           <video className={styles.video} ref={localPeerRef} autoPlay playsInline></video>
-          <button className={styles.btn} onClick={requestCameraPermission}>start Video</button>
         </div>
         <div className={styles.videoCont}>
           <video className={styles.video} ref={remotePeerRef} autoPlay playsInline></video>
         </div>
-        
-        
       </div>
     </main>
   );
