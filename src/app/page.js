@@ -8,7 +8,7 @@ export default function Home() {
   const remotePeerRef = useRef(null);
 
   useEffect(() => {
-    navigator.mediaDevices.getUserMedia({ video: true })
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
       .then((stream) => {
         if (localPeerRef.current) {
           localPeerRef.current.srcObject = stream;
@@ -21,7 +21,7 @@ export default function Home() {
 
   const requestCameraPermission = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true ,audio: false });
       if (localPeerRef.current) {
         localPeerRef.current.srcObject = stream;
       }
