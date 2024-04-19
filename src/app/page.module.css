@@ -1,0 +1,22 @@
+.videosCont{
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.videoCont{
+    width: 45%;
+}
+
+.video{
+    width: 100%;
+    background-color: black;
+}
+
+.btn{
+    background-color: rgb(127, 127, 216);
+    color: white;
+    margin: 1rem 0; 
+    padding: 10px 20px;
+}
